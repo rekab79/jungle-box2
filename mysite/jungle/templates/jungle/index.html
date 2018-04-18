@@ -1,0 +1,25 @@
+{%if all_profiles %}
+<style>
+table{
+	border: solid black;
+}
+</style>
+<table>
+	<tr>
+		<th>Temp</th>
+		<th>Humidity</th>
+		<th>Species</th>
+	</tr>
+	{% for profile in all_profiles %}
+	<tr>
+		<td><h href="/jungle/growprofile/{{profile.id}}/">{{profile.temperature}}</h></td>
+		<td><h href="/jungle/growprofile/{{profile.id}}/">{{profile.humidity}}</h>
+		</td>
+		<td><h href="/jungle/growprofile/{{profile.id}}/">{{profile.species}}</h>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+{%else%}
+<h1>No profiles found</h1>
+{%endif%}
